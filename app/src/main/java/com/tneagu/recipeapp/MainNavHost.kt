@@ -1,8 +1,6 @@
 package com.tneagu.recipeapp
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.tneagu.recipeapp.feature.recipelist.presentation.RECIPE_LIST_ROUTE
@@ -15,7 +13,7 @@ fun MainNavHost(
     NavHost(
         navController = navController,
         startDestination = RECIPE_LIST_ROUTE,
-    ){
+    ) {
         recipeListScreen(onRecipeClick = {})
     }
 }
