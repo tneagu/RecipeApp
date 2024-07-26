@@ -1,6 +1,6 @@
 package com.tneagu.recipeapp.feature.recipelist.presentation.model
 
-import com.tneagu.recipeapp.core.model.Recipe
+import com.tneagu.recipeapp.core.data.model.Recipe
 import com.tneagu.recipeapp.feature.recipelist.presentation.RecipeListViewModel
 
 sealed class RecipeListScreenState {

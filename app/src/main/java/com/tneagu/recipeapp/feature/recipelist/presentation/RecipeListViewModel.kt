@@ -2,7 +2,7 @@ package com.tneagu.recipeapp.feature.recipelist.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tneagu.recipeapp.core.model.Recipe
+import com.tneagu.recipeapp.core.data.model.Recipe
 import com.tneagu.recipeapp.feature.recipelist.presentation.model.RecipeListScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay

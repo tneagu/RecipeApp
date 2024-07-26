@@ -1,5 +1,6 @@
 package com.tneagu.recipeapp.feature.recipelist.presentation
 
+import RecipeItem
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -41,7 +42,7 @@ private fun RecipeListScreen(
                 // Display the list of recipes
                 LazyColumn {
                     items(state.recipes) { recipe ->
-                        Text(recipe.name)
+                        RecipeItem(recipe = recipe)
                     }
                 }
             }

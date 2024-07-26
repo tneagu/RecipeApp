@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -67,6 +68,11 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation (libs.androidx.hilt.navigation.compose)
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -74,4 +80,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
 }
