@@ -42,5 +42,5 @@ fun RecipeItem(recipe: Recipe) {
 @Preview(showBackground = true)
 @Composable
 fun RecipeItemPreview() {
-    RecipeItem(recipe = Recipe("1", "Delicious Pasta"))
+    RecipeItem(recipe = Recipe(1, "Delicious Pasta", imageUrl = ""))
 }
