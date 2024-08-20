@@ -1,22 +1,21 @@
 package com.tneagu.recipeapp.feature.recipelist.data
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.tneagu.recipeapp.core.data.model.Recipe
 import com.tneagu.recipeapp.feature.recipelist.domain.repo.RecipeRepo
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RecipeRepoImpl @Inject constructor(
-    val api: RecipeApi
-): RecipeRepo {
-    override suspend fun getAll(): List<Recipe> {
-        val apiResult = try {
-            api.getRecipes()
-        } catch (e: Exception){
-            return emptyList()
-        }
-
-        return apiResult.results.map {
-            it.toRecipe()
-        }
+    private val api: RecipeApi
+) : RecipeRepo {
+    override fun getAll(): Flow<PagingData<Recipe>> {
+        return Pager(
+            config = PagingConfig(pageSize = 10, enablePlaceholders = false),
+            pagingSourceFactory = { RecipePagingSource(api) }
+        ).flow
     }
 
     override suspend fun getRecipe(id: String): Recipe {

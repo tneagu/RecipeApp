@@ -1,7 +1,7 @@
 package com.tneagu.recipeapp.feature.recipelist.presentation.model
 
+import androidx.paging.PagingData
 import com.tneagu.recipeapp.core.data.model.Recipe
-import com.tneagu.recipeapp.feature.recipelist.presentation.RecipeListViewModel
 
 sealed class RecipeListScreenState {
 
@@ -11,6 +11,6 @@ sealed class RecipeListScreenState {
 
     data object Error : RecipeListScreenState()
 
-    data class Success(val recipes: List<Recipe>) : RecipeListScreenState()
+    data class Success(val recipes: PagingData<Recipe>) : RecipeListScreenState()
 
 }
